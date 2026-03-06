@@ -8,6 +8,15 @@ dist
 build
 coverage
 npm-debug.lognode_modules
+.next
+.env
+.env.local
+.env.*
+.DS_Store
+dist
+build
+coverage
+npm-debug.lognode_modules
 node_modules
 .next
 .env
