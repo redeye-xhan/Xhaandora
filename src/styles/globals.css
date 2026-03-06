@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Logo font helper (fallback) */
+.logo-font {
+  font-family: 'Great Vibes', cursive;
+}
+
+.focus-ring {
+  @apply ring-2 ring-offset-2 ring-teal-500 dark:ring-offset-slate-900;
+}
+
+.timer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.timer-button:hover::before {
+  left: 100%;
+}
+
+.focus-mode .navigation,
+.focus-mode .menu-bar,
+.focus-mode .right-sidebar,
+.focus-mode .session-history,
+.focus-mode .music-player,
+.focus-mode .session-stats,
+.focus-mode .daily-plan,
+.focus-mode .tasks {
+  display: none !important;
+}
+
+.focus-mode main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.focus-mode .timer-container {
+  transform: scale(1.2);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wave-background,
+.wave-background svg,
+.bg-animation,
+[class*="bg-gradient"] {
+  pointer-events: none !important;
+  z-index: 0;
+}
+
+nav,
+[role="navigation"],
+button,
+a,
+input,
+textarea,
+select,
+.glass-card,
+.btn-premium,
+.navigation,
+[class*="sidebar"],
+[class*="sidebar"] button {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: auto;
+}
+
+nav button,
+nav [role="button"],
+[class*="navigation"] button {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  z-index: 50;
+}
+
+.glass-card button,
+.glass-card input,
+.glass-card textarea {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+[role="dialog"],
+[role="alertdialog"],
+.modal {
+  pointer-events: auto !important;
+  z-index: 100;
+}
+
+[class*="tooltip"],
+[class*="menu"],
+[class*="dropdown"],
+.popover {
+  pointer-events: auto !important;
+  z-index: 50;
+}
+
+*:focus,
+*:hover {
+  pointer-events: auto !important;
+}
+
+input[type="button"],
+input[type="submit"],
+button,
+a,
+[role="button"] {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+[role="button"],
+.btn-premium,
+[class*="btn-"] {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+button,
+[role="button"],
+input[type="checkbox"],
+input[type="radio"],
+a,
+[class*="clickable"] {
+  cursor: pointer !important;
+}
+
+.text-accent-green {
+  color: #4ade80;
+}
+
+.dark .text-accent-green {
+  color: #86efac;
+}
+
+.text-accent-yellow {
+  color: #facc15;
+}
+
+.dark .text-accent-yellow {
+  color: #fde047;
+}
+
+@keyframes drawPath {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Small helper to keep logo compact in sidebar */
+.logo-compact {
+  max-width: 160px;
+}
+
+/* Range slider styling for sound controls */
+.sound-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2dd4bf, #60a5fa);
+  outline: none;
+}
+
+.sound-range::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2dd4bf, #60a5fa);
+}
+
+.sound-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+  margin-top: -4px;
+}
+
+.sound-range::-moz-range-track {
+  height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(to right, #2dd4bf, #60a5fa);
+}
+
+.sound-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+}
